@@ -1,10 +1,10 @@
-FROM    debian:12-slim
+FROM    ubuntu:jammy
 LABEL   maintainer=samudra.bekti@gmail.com
 
-ARG     OPENLDAP_PACKAGE_VERSION=2.5.13+dfsg-5
+ARG     OPENLDAP_PACKAGE_VERSION=2.5.16+dfsg-0ubuntu0.22.04.1
 
 RUN     apt-get update \
-        && apt-get install -y --no-install-recommends \
+        && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
             procps net-tools \
             ldap-utils=${OPENLDAP_PACKAGE_VERSION} \
             slapd=${OPENLDAP_PACKAGE_VERSION} \
