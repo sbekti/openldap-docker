@@ -1,7 +1,7 @@
-FROM    ubuntu:jammy
+FROM    ubuntu:noble
 LABEL   maintainer=samudra.bekti@gmail.com
 
-ARG     OPENLDAP_PACKAGE_VERSION=2.5.16+dfsg-0ubuntu0.22.04.1
+ARG     OPENLDAP_PACKAGE_VERSION=2.6.7*
 
 RUN     apt-get update \
         && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
