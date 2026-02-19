@@ -1,7 +1,7 @@
-FROM    ubuntu:noble
+FROM    ubuntu:24.04
 LABEL   maintainer=samudra.bekti@gmail.com
 
-ARG     OPENLDAP_PACKAGE_VERSION=2.6.7*
+ARG     OPENLDAP_PACKAGE_VERSION=2.6.10*
 
 RUN     apt-get update \
         && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
