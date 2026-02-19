@@ -14,9 +14,9 @@ RUN     apt-get update \
 
 RUN     rm -rf /var/lib/ldap /etc/ldap/slapd.d
 
-COPY    docker-entrypoint.sh /docker-entrypoint.sh
+COPY    entrypoint.sh /entrypoint.sh
 
 EXPOSE  389 636
 
-ENTRYPOINT  ["/docker-entrypoint.sh"]
+ENTRYPOINT  ["/entrypoint.sh"]
 CMD         ["slapd", "-d", "32768", "-h", "ldap://:389/ ldapi:/// ldaps://:636/"]
